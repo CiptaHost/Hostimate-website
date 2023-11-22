@@ -1,9 +1,21 @@
 {
-  "cleanUrls": true,
-  "rewrites": [
+  "version": 2,
+  "builds": [{ "src": "index.html", "use": "@vercel/static-build" }],
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "index"
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "status": 200,
+      "headers": { "cache-control": "s-maxage=1, stale-while-revalidate" }
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "index.html",
+      "status": 301
     }
   ],
+  "clearUrls": true
 }
