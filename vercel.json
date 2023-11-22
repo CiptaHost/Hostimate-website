@@ -4,6 +4,10 @@
     {
       "source": "/(.*)",
       "destination": "index"
-    }
+    },
+    {
+      "source": "/whatsapp",
+      "destination": "https://wa.me/6285941896616"
+    },
   ]
 }
